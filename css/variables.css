@@ -1,0 +1,15 @@
+:root {
+    --background-color: rgb(247, 249, 251);
+    --primary-color: 10, 61, 98; /* RGB without 'rgb()' for easier use in rgba() */
+    --accent-color: 26, 188, 156; /* RGB without 'rgb()' for easier use in rgba() */
+    --text-color: rgb(46, 46, 46);
+    --text-white: white;
+    --text-white-secondary: rgba(225, 225, 225, 0.8);
+    --secondary-text-color: rgb(31, 31, 31);
+    --page-x-deadzone: 20px;
+
+    /* Fonts */
+    --primary-font: "Montserrat", sans-serif;
+    --secondary-font-size: 0.9rem;
+    --button-font-size: 1rem;
+}
