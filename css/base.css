@@ -154,6 +154,7 @@ nav > a {
     outline: none;
     border: 2px solid rgb(var(--accent-color));
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .cta-button.primary {
