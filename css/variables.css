@@ -1,15 +1,21 @@
 :root {
-    --background-color: rgb(247, 249, 251);
+    --background-color: rgb(245, 245, 245);
     --primary-color: 10, 61, 98; /* RGB without 'rgb()' for easier use in rgba() */
     --accent-color: 26, 188, 156; /* RGB without 'rgb()' for easier use in rgba() */
     --text-color: rgb(46, 46, 46);
+    --secondary-text-color: rgb(130, 130, 130);
     --text-white: white;
     --text-white-secondary: rgba(225, 225, 225, 0.8);
-    --secondary-text-color: rgb(31, 31, 31);
     --page-x-deadzone: 20px;
+    --page-y-spacing: 50px;
+    --section-y-spacing: 25px;
 
     /* Fonts */
     --primary-font: "Montserrat", sans-serif;
+    --secondary-font: "Pacifico", cursive;
+    --font-weight1: 500;
+
+
     --secondary-font-size: 0.9rem;
     --button-font-size: 1rem;
 }

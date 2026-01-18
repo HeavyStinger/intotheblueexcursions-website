@@ -1,6 +1,9 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Pacifico */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 /* Libraries */
 @import url(../vendor/corbzhamburger/hamburger.css);
 
@@ -64,7 +67,7 @@
 
 .hero > .content > .title > span {
     font-size: 1.35rem;
-    font-weight: 500;
+    font-weight: var(--font-weight1);
     text-transform: uppercase;
 }
 
@@ -82,28 +85,188 @@
     font-size: 0.8rem;
 }
 
+.hero .video {
+    height: 250px;
+    width: 444.4444444px;
+    margin-top: 50px;
+    display: none;
+    border-radius: 10px;
+}
+
 .hero > .video-pill {
     position: absolute;
     bottom: var(--page-x-deadzone);
     left: var(--page-x-deadzone);
 }
 
-@media only screen and (min-width: 770px) {
-    .hero > .content > .title, .hero > .content > .title > span {
-        font-size: 2rem;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-    /* .hero > .content > .title {
-        font-size: 2rem;
-    } */
+.hero > .trust {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: var(--page-x-deadzone);
+    right: var(--page-x-deadzone);
+    color: white;
+}
 
+.hero > .trust > .images {
+    display: flex;
+    align-items: center;
+}
+
+.hero > .trust > .images > .fake-photo {
+    height: 50px;
+    width: 50px;
+    background-color: grey;
+    border-radius: 50%;;
+}
+
+.hero > .trust > .images > .fake-photo:nth-child(n+2) {
+    margin-left: -20px;
+}
+
+@media only screen and (min-width: 770px) {
     .hero > picture::before {
         background: linear-gradient(
-        to bottom,
-        rgba(0, 20, 35, 0.8),
-        rgba(0, 20, 35, 0.5),
-        rgba(0, 20, 35, 0.8)
-    );
+            to bottom,
+            rgba(0, 20, 35, 0.8),
+            rgba(0, 20, 35, 0.5),
+            rgba(0, 20, 35, 0.8)
+        );
     }
+
+    .hero > .content {
+        top: unset;
+        bottom: var(--page-x-deadzone);
+        transform: none;
+    }
+
+    .hero > .content > .trust {
+        display: none;
+    }
+
+    .hero .video {
+        display: block;
+    }
+
+    .hero > .trust {
+        display: flex;
+    }
+
+    .hero > .video-pill {
+        display: none;
+    }
+
+    .hero > .content > .title, .hero > .content > .title > span {
+        font-size: 2rem;
+        font-weight: var(--font-weight1);
+        text-transform: uppercase;
+    }
+}
+
+/* Featured */
+
+.featured {
+    width: 100dvw;
+    margin-top: var(--page-y-spacing);
+}
+
+.featured > .content {
+    width: 100%;
+    margin-top: var(--section-y-spacing);
+    padding: 0 var(--page-x-deadzone);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.featured > .content > .card {
+    width: clamp(250px, 20%, 300px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px rgba(109, 109, 109, 0.2);
+}
+
+.featured > .content > .card > img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.featured > .content > .card > .info-box {
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-color);
+}
+
+.featured > .content > .card > .info-box > .type-pill {
+    width: fit-content;
+    padding: 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(76, 76, 76, 0.9);
+    border-radius: 10px;
+}
+
+.featured > .content > .card > .info-box > .type-pill > svg {
+    height: 0.9rem;
+}
+
+/* Pill scenic flight */
+
+.featured > .content > .card > .info-box > .type-pill.scenic-flight, .featured > .content > .card > .info-box > .type-pill.scenic-flight > svg {
+    background-color: rgb(199, 228, 225);
+    fill: rgb(var(--accent-color));
+}
+
+.featured > .content > .card > .info-box > .title {
+    font-weight: 600;
+}
+
+.featured > .content > .card > .info-box > .route {
+    /* margin-top: -8px; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2px;
+}
+
+.featured > .content > .card > .info-box > .route > .location {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight1);
+    color: var(--secondary-text-color);
+}
+
+.featured > .content > .card > .info-box > .route > svg {
+    height: 1.1rem;
+    fill: var(--secondary-text-color);
+}
+
+.featured > .content > .card > .info-box > .price {
+    text-align: left;
+    font-weight: var(--font-weight1);
+}
+
+.featured > .content > .card > .info-box > .price > span {
+    font-size: 0.8rem;
+    font-weight: initial;
+}
+
+.featured > .content > .card > .info-box > .cta-button {
+    margin-top: 10px;
+}
+
+/* Testimonials section */
+
+.testimonials {
+    margin-top: var(--page-y-spacing);
 }
