@@ -44,7 +44,7 @@
 }
 
 .hero > .content {
-    max-width: 500px;
+    max-width: 530px;
     padding: 0 var(--page-x-deadzone);
     position: absolute;
     top: 50%;
@@ -86,9 +86,9 @@
 }
 
 .hero .video {
-    height: 225px;
-    width: 401px;
-    margin-top: 25px;
+    height: 250px;
+    width: 444.4444px;
+    margin-top: 50px;
     display: none;
     border-radius: 10px;
 }
