@@ -178,7 +178,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: var(--card-gap);
     flex-wrap: wrap;
 }
 
@@ -197,7 +197,7 @@
 }
 
 .featured > .content > .card > .info-box {
-    padding: 15px 10px;
+    padding: var(--card-padding);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -269,4 +269,68 @@
 
 .testimonials {
     margin-top: var(--page-y-spacing);
+}
+
+.testimonials > .content {
+    width: 100%;
+    margin-top: var(--section-y-spacing);
+    padding: 0 var(--page-x-deadzone);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--card-gap);
+}
+
+.testimonials > .content > .card {
+    width: clamp(335px, 100%, 300px);
+    background-color: white;
+    background-image: url(../media/images/heroAI.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color;
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px rgba(109, 109, 109, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.testimonials > .content > .card > svg {
+    width: 35px;
+    fill: rgb(var(--accent-color));
+    transition: opacity 0.2s ease;
+}
+
+.testimonials > .content > .card > .quote {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    transition: opacity 0.2s ease;
+}
+
+.testimonials > .content > .card > .name {
+    margin-top: auto;
+    padding-top: 20px;
+    font-weight: var(--font-weight1);
+    border-top: 2px solid var(--text-white-secondary);
+    transition: color 0.2s ease;
+}
+
+.testimonials > .content > .card:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.testimonials > .content > .card:hover svg {
+    opacity: 0;
+}
+
+.testimonials > .content > .card:hover .quote {
+    opacity: 0;
+}
+
+.testimonials > .content > .card:hover .name {
+    color: white;
+    border: none;
 }

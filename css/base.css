@@ -119,11 +119,19 @@ nav > a {
     }
 
     nav > .links > a {
-        color: var(--text-white);
+        color: var(--text-white-secondary);
         text-decoration: none;
         font-family: var(--primary-font);
         font-size: 1rem;
         transition: color 0.25s ease;
+    }
+
+    nav > .links > a.active {
+        color: var(--text-white);
+    }
+
+    nav > .links > a:hover {
+        color: var(--text-white);
     }
 
     nav > .links > .cta-button {
@@ -242,4 +250,142 @@ nav > a {
     width: 100%;
     padding: 0 var(--page-x-deadzone);
     text-align: center;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    margin-top: var(--page-y-spacing);
+}
+
+footer > .footer-content {
+    width: 100%;
+    padding: 40px var(--page-x-deadzone);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+footer > .footer-content > .footer-company {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer > .footer-content > .footer-company > .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+}
+
+footer > .footer-content > .footer-company > .logo > img {
+    width: 80px;
+}
+
+footer > .footer-content > .footer-company > .description {
+    line-height: 1.4;
+}
+
+footer > .footer-content > .footer-company > .cta-button {
+    width: fit-content;
+}
+
+footer > .footer-content .title {
+    /* font-family: var(--secondary-font); */
+    font-size: 20px;
+}
+
+footer > .footer-content > .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+footer > .footer-content > .bottom > .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+footer > .footer-content > .bottom > .footer-links a, footer > .footer-content > .bottom > .footer-contact a {
+    text-decoration: none;
+    color: black;
+}
+
+footer > .footer-content > .bottom > .footer-links a.active, footer > .footer-content > .bottom > .footer-links a:hover, footer > .footer-content > .bottom > .footer-contact a:hover {
+    color: rgb(var(--accent-color));
+}
+
+footer > .footer-content > .bottom > .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+footer > .footer-content > .bottom > .footer-contact svg {
+    width: 20px;
+}
+
+footer > .footer-content > .bottom > .footer-contact  a {
+    color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+footer > .footer-content > .bottom > .footer-contact a:hover svg {
+    fill: rgb(var(--accent-color));
+}
+
+footer > .designer {
+    width: 100%;
+    background-color: rgba(var(--accent-color));
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+footer > .designer > a {
+    height: 17px;
+    display: block;
+}
+
+footer > .designer > a > svg {
+    height: 17px;
+    fill: white;
+}
+
+/* Adjust for wider screens */
+
+@media only screen and (min-width: 600px) {
+    footer > .footer-content > .bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 1056px) {
+    footer > .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 100px;
+    }
+
+    footer > .footer-content > .footer-company {
+        width: 50%;
+    }
+
+    footer > .footer-content > .bottom {
+        width: 50%;
+        margin-top: 80px;
+        gap: 100px;
+    }
 }

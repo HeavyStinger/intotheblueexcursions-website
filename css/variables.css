@@ -1,14 +1,18 @@
 :root {
     --background-color: rgb(245, 245, 245);
-    --primary-color: 10, 61, 98; /* RGB without 'rgb()' for easier use in rgba() */
+    --primary-color: white; /* used to be rgb(10, 61, 98) */
     --accent-color: 26, 188, 156; /* RGB without 'rgb()' for easier use in rgba() */
     --text-color: rgb(46, 46, 46);
     --secondary-text-color: rgb(130, 130, 130);
     --text-white: white;
     --text-white-secondary: rgba(225, 225, 225, 0.8);
+
+    /* Spacing */
     --page-x-deadzone: 20px;
     --page-y-spacing: 50px;
     --section-y-spacing: 25px;
+    --card-gap: 20px;
+    --card-padding: 15px 10px;
 
     /* Fonts */
     --primary-font: "Montserrat", sans-serif;
