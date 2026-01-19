@@ -188,22 +188,18 @@ nav > a {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-
     padding: 10px 20px;
     border-radius: 15px;
-
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
-
     color: var(--text-white-secondary);
+    text-decoration: none;
     font-family: var(--primary-font);
     font-size: var(--button-font-size);
     font-weight: 500;
     letter-spacing: 0.5px;
-
     border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
-
     transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
