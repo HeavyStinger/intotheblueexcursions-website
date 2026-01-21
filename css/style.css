@@ -125,7 +125,7 @@
     margin-left: -20px;
 }
 
-@media only screen and (min-width: 770px) {
+@media only screen and (min-width: 816px) {
     .hero > picture::before {
         background: linear-gradient(
             to bottom,
@@ -265,6 +265,10 @@
     margin-top: 10px;
 }
 
+.featured > .cta-button {
+    margin: var(--section-y-spacing) auto 0 auto;
+}
+
 /* Testimonials section */
 
 .testimonials {
@@ -312,10 +316,19 @@
 
 .testimonials > .content > .card > .name {
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: 10px;
     font-weight: var(--font-weight1);
     border-top: 2px solid var(--text-white-secondary);
     transition: color 0.2s ease;
+}
+
+.testimonials > .content > .card > .name::before {
+    content: "Photo taken by";
+    margin-bottom: 5px;
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .testimonials > .content > .card:hover {
@@ -332,5 +345,9 @@
 
 .testimonials > .content > .card:hover .name {
     color: white;
-    border: none;
+    border: 2px solid transparent;
+}
+
+.testimonials > .content > .card:hover .name::before {
+    opacity: 1;
 }
