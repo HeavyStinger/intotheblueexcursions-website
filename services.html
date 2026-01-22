@@ -9,7 +9,7 @@
         <title>Into The Blue Excursion</title>
     </head>
     <body>
-        <nav>
+        <nav class="not-home">
             <div class="logo">
                 <img src="./media/images/logo.png" alt="Logo for Into the Blue Excursions" class="logo">
                 Into The Blue Excursions
@@ -20,7 +20,7 @@
                 <a href="contact.html">Contact</a>
                 <a class="cta-button" skate-type="OG">Book Now</a>
             </div>
-            <a class="cta-button" skate-type="OG">Book Now</a>
+            <a class="cta-button primary" skate-type="OG">Book Now</a>
             <div class="hamburger">
                 <input class="menu-btn" type="checkbox" id="menu-btn" name="menu-btn" />
                 <label class="menu-icon" for="menu-btn">
@@ -28,6 +28,106 @@
                 </label>
             </div>
         </nav>
+        <div class="nav-links-mobile" id="nav-links-mobile">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <!-- <a class="cta-button" skate-type="OG">Book Now</a> -->
+        </div>
+        <main>
+            <section class="tours">
+                <h2 class="section-title">Packages</h2>
+                <div class="content">
+                    <div class="card">
+                        <div class="top">
+                            <div class="title">Airplane Flight</div>
+                            <div class="subtitle">The Blue Hole</div>
+                            <div class="price"><strong>$250</strong> USD</div>
+                        </div>
+                        <div class="center">
+                            <div class="title">Duration</div>
+                            <div class="duration">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M600-160q-134 0-227-93t-93-227q0-133 93-226.5T600-800q133 0 226.5 93.5T920-480q0 134-93.5 227T600-160Zm0-80q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70Zm91-91 57-57-108-108v-144h-80v177l131 132ZM80-600v-80h160v80H80ZM40-440v-80h200v80H40Zm40 160v-80h160v80H80Zm520-200Z"/></svg>
+                                1 hour
+                            </div>
+                            <div class="features-title title">Description</div>
+                            <div class="features">
+                                <div class="feature">
+                                    Soar from the airport on a breathtaking flight over the world's longest living barrier reef, dotted with several islands while on your way to this natural wonder. Enjoy guaranteed window seating as you take in the beauty of the iconic Blue Hole from above.
+                                </div>
+                                <!-- <div class="feature">Facial treatment</div>
+                                <div class="feature">Body scrub of your choice</div>
+                                <div class="sub-features">
+                                    <div class="sub-feature">Lemon grass scrub</div>
+                                    <div class="feature">Herbal salt scrub</div>
+                                </div>
+                                <div class="feature">You will then feel completely renewed</div> -->
+                            </div>
+                        </div>
+                        <a class="cta-button primary" skate-type="patpack|Island Package">
+                            Book now
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="top featured-tour" data-tag="Most Popular">
+                            <div class="title">Maya Escape</div>
+                            <div class="subtitle">Deep Relaxation + Emotional Balance</div>
+                            <div class="price"><strong>$150</strong> USD</div>
+                        </div>
+                        <div class="center">
+                            <div class="title">Duration</div>
+                            <div class="duration">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M600-160q-134 0-227-93t-93-227q0-133 93-226.5T600-800q133 0 226.5 93.5T920-480q0 134-93.5 227T600-160Zm0-80q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70Zm91-91 57-57-108-108v-144h-80v177l131 132ZM80-600v-80h160v80H80ZM40-440v-80h200v80H40Zm40 160v-80h160v80H80Zm520-200Z"/></svg>
+                                2 hours
+                            </div>
+                            <div class="features-title title">Features</div>
+                            <div class="features">
+                                <div class="feature">Relaxing healing massage</div>
+                                <div class="feature">Mini facial</div>
+                                <div class="feature">Body scrub of your choice</div>
+                                <div class="sub-features">
+                                    <div class="sub-feature">Lemon grass scrub</div>
+                                    <div class="feature">Herbal salt scrub</div>
+                                </div>
+                                <div class="feature">Pampering steam shower-bath</div>
+                                <div class="feature">Helps increase inner strength & emotional balance</div>
+                            </div>
+                        </div>
+                        <a class="cta-button primary" skate-type="patpack|Maya Escape">
+                            Book now
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="top">
+                            <div class="title">The Refined Man</div>
+                            <div class="subtitle">Ideal for Post-Activity Recovery</div>
+                            <div class="price"><strong>$150</strong> USD</div>
+                        </div>
+                        <div class="center">
+                            <div class="title">Duration</div>
+                            <div class="duration">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M600-160q-134 0-227-93t-93-227q0-133 93-226.5T600-800q133 0 226.5 93.5T920-480q0 134-93.5 227T600-160Zm0-80q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70Zm91-91 57-57-108-108v-144h-80v177l131 132ZM80-600v-80h160v80H80ZM40-440v-80h200v80H40Zm40 160v-80h160v80H80Zm520-200Z"/></svg>
+                                2 hours
+                            </div>
+                            <div class="features-title title">Features</div>
+                            <div class="features">
+                                <div class="feature">Targeted foot therapy</div>
+                                <div class="feature">Full body massage</div>
+                                <div class="feature">Mini facial</div>
+                                <div class="feature">Invigorating body scrub</div>
+                                <div class="feature">Perfect after a physically demanding day</div>
+                            </div>
+                        </div>
+                        <a class="cta-button primary" skate-type="patpack|refiningforge">
+                            Book now
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
         <footer>
             <div class="footer-content">
                 <div class="footer-company">
@@ -49,27 +149,27 @@
                     <div class="footer-contact">
                         <div class="title">Contact Information</div>
                         <div class="location">
-                            <a href="https://maps.app.goo.gl/CX6XK9ARU2Fvox4cA" target="_blank">
+                            <a href="https://maps.app.goo.gl/v8CnVEYTiD1NzQVu8" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg>
-                                Caye Caulker BZ
+                                Queen Conch St., Caye Caulker
                             </a>
                         </div>
                         <div class="phone">
-                            <a href="tel:+5016000000">
+                            <a href="tel:+5016250545">
                                 <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"><path d="M162-120q-18 0-30-12t-12-30v-162q0-13 9-23.5t23-14.5l138-28q14-2 28.5 2.5T342-374l94 94q38-22 72-48.5t65-57.5q33-32 60.5-66.5T681-524l-97-98q-8-8-11-19t-1-27l26-140q2-13 13-22.5t25-9.5h162q18 0 30 12t12 30q0 125-54.5 247T631-329Q531-229 409-174.5T162-120Zm556-480q17-39 26-79t14-81h-88l-18 94 66 66ZM360-244l-66-66-94 20v88q41-3 81-14t79-28Zm358-356ZM360-244Z"/></svg>
-                                +501 6000000
+                                +501 6250545
                             </a>
                         </div>
                         <div class="phone">
-                            <a href="tel:+5016000000">
+                            <a href="tel:+5016334902">
                                 <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"><path d="M162-120q-18 0-30-12t-12-30v-162q0-13 9-23.5t23-14.5l138-28q14-2 28.5 2.5T342-374l94 94q38-22 72-48.5t65-57.5q33-32 60.5-66.5T681-524l-97-98q-8-8-11-19t-1-27l26-140q2-13 13-22.5t25-9.5h162q18 0 30 12t12 30q0 125-54.5 247T631-329Q531-229 409-174.5T162-120Zm556-480q17-39 26-79t14-81h-88l-18 94 66 66ZM360-244l-66-66-94 20v88q41-3 81-14t79-28Zm358-356ZM360-244Z"/></svg>
-                                +501 6000000
+                                +501 6334902
                             </a>
                         </div>
                         <div class="email">
-                            <a href="mailto:edenbelize@hotmail.com">
+                            <a href="mailto:intotheblueexcursions@gmail.com">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-                                itbe@gmail.com
+                                intotheblueexcursions@gmail.com
                             </a>
                         </div>
                     </div>
