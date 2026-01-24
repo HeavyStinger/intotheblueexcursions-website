@@ -164,123 +164,84 @@
     }
 }
 
-/* Featured */
+/* Main Services */
 
-.featured {
-    width: 100dvw;
+.main-services {
+    width: 100vw;
     margin-top: var(--page-y-spacing);
 }
 
-.featured > .content {
+.main-services > .content {
     width: 100%;
     margin-top: var(--section-y-spacing);
     padding: 0 var(--page-x-deadzone);
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: var(--card-gap);
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-.featured > .content > .card {
-    height: 400px;
-    width: clamp(300px, 22%, 350px);
-    /* background-color: white; */
+.main-services > .content > .card {
+    /* min-height: 300px; */
+    width: clamp(300px, 100%, 450px);
+    background-color: var(--primary-color);
+    padding: 10px 15px;
     display: flex;
     flex-direction: column;
-    position: relative;
+    gap: 15px;
+    border: 3px solid var(--border-color);
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 5px 10px 10px rgba(109, 109, 109, 0.4);
 }
 
-.featured > .content > .card > img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    /* border-radius: 10px; */
-}
-
-.featured > .content > .card > .info-box {
-    height: 200px;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.4) 90%, rgba(0, 0, 0, 0) 100%);
-    padding: 25px 10px 15px 10px;
+.main-services > .content > .card > .top {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    gap: 10px;
-    color: var(--text-white );
-    /* border-radius: 0 0 10px 10px; */
+    align-items: center;
+    gap: 15px;
 }
 
-.featured > .content > .card > .info-box > .type-pill {
+.main-services > .content > .card > .top > .title {
+    font-weight: var(--font-weight1);
+}
+
+.main-services > .content > .card > .top > .icon {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(165, 85, 42, 0.3);
+    display: block;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.main-services > .content > .card > .top > .icon > svg {
+    height: 20px;
+    width: 20px;
+    fill: rgb(165, 85, 42);
+}
+
+.main-services > .content > .card > .description {
+    color: var(--secondary-text-color);
+}
+
+.main-services > .content > .card > a {
     width: fit-content;
-    padding: 3px 8px;
+    margin-top: auto;
+    margin-left: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgba(76, 76, 76, 0.9);
-    border-radius: 10px;
+    color: rgb(var(--accent-color));
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(var(--accent-color));
+    cursor: pointer;
 }
 
-.featured > .content > .card > .info-box > .type-pill > svg {
-    height: 0.9rem;
-}
-
-/* Pill scenic flight */
-
-.featured > .content > .card > .info-box > .type-pill.scenic-flight, .featured > .content > .card > .info-box > .type-pill.scenic-flight > svg {
-    background-color: rgb(199, 228, 225);
+.main-services > .content > .card > a > svg {
+    width: 15px;
     fill: rgb(var(--accent-color));
 }
 
-.featured > .content > .card > .info-box > .title {
-    margin-bottom: 10px;
-    /* font-weight: 600; */
-    font-size: 0.9rem;
-}
-
-.featured > .content > .card > .info-box > .route {
-    /* margin-top: -8px; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    gap: 2px;
-}
-
-.featured > .content > .card > .info-box > .route > .location {
-    font-size: 0.8rem;
-    font-weight: var(--font-weight1);
-    color: var(--text-white-secondary);
-}
-
-.featured > .content > .card > .info-box > .route > svg {
-    height: 1.1rem;
-    fill: var(--secondary-text-color);
-}
-
-.featured > .content > .card > .info-box > .price {
-    text-align: left;
-    font-weight: var(--font-weight1);
-}
-
-.featured > .content > .card > .info-box > .price > span {
-    font-size: 0.8rem;
-    font-weight: initial;
-}
-
-.featured > .content > .card > .info-box > .cta-button {
-    margin-top: auto;
-}
-
-.featured > .cta-button {
+.main-services > .cta-button {
     margin: var(--section-y-spacing) auto 0 auto;
 }
 

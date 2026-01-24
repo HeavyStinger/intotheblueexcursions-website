@@ -8,6 +8,8 @@
     --text-white: white;
     --text-white-secondary: rgba(225, 225, 225, 0.8);
 
+    --border-color: rgba(192, 192, 192, 0.35);
+
     /* Spacing */
     --page-x-deadzone: 20px;
     --page-y-spacing: 50px;
