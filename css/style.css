@@ -30,11 +30,11 @@
 
 .hero > picture::before {
     content: "";
+    height: 100vh;
+    width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
     background: linear-gradient(
         to bottom,
         rgba(0, 20, 35, 0.6),
@@ -346,7 +346,7 @@
 }
 
 .tours > .content > .card {
-    width: 350px;
+    width: 400px;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 8px;
     display: flex;
@@ -363,6 +363,7 @@
 }
 
 .tours > .content > .card > .top > img {
+    height: 192.46px;
     width: 100%;
     display: block;
     object-fit: cover;
@@ -373,7 +374,7 @@
 .tours > .content > .card > .top > .info {
     width: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0) 100%);
-    padding: 0 12px 10px 12px;
+    padding: 8px 12px 8px 12px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -381,26 +382,16 @@
     bottom: 0;
     left: 0;
     color: var(--text-white);
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
 }
 
 .tours > .content > .card > .top > .info > .title {
     font-weight: var(--font-weight1);
 }
 
-.tours > .content > .card > .top > .info > .route {
-    display: flex;
-    gap: 10px;
-    color: var(--text-white-secondary);
-    font-size: 0.85rem;
-}
+/* Details section */
 
-.tours > .content > .card > .top > .info > .route > svg {
-    height: 17px;
-    fill: var(--text-white-secondary);
-}
-
-.tours > .content > .card > .details {
+/* .tours > .content > .card > .details {
     padding: 0 12px 12px 12px;
     display: flex;
     justify-content: space-between;
@@ -422,7 +413,7 @@
 .tours > .content > .card > .details > .detail > svg {
     height: 17px;
     fill: rgb(var(--accent-color));
-}
+} */
 
 .tours > .content > .card > .description {
     padding: 0 12px;
@@ -436,6 +427,9 @@
 
 .tours > .content > .card > .highlights {
     padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .tours > .content > .card > .highlights > .highlight {
@@ -447,6 +441,63 @@
 .tours > .content > .card > .highlights > .highlight > svg {
     height: 20px;
     fill: rgb(var(--accent-color));
+}
+
+.tours > .content > .card > .photos {
+    /* padding: 0 12px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tours > .content > .card > .photos > .wrapper > img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.tours > .content > .card > .photos > .wrapper:nth-child(1) > img {
+    border-radius: 10px 0 0 10px;
+}
+
+.tours > .content > .card > .photos > .wrapper:nth-child(3) > img {
+    border-radius: 0 10px 10px 0;
+}
+
+.tours > .content > .card > .photos > .wrapper > .location {
+    width: 100%;
+    margin-top: 2.5px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--secondary-text-color);
+}
+
+.tours > .content > .card > .important-info {
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tours > .content > .card > .important-info > .detail > svg {
+    height: 20px;
+    width: 20px;
+    fill: rgb(var(--accent-color));
+    flex-shrink: 0;
+}
+
+.tours > .content > .card > .important-info > .detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-text-color);
+}
+
+.tours > .content > .card > .important-info > .detail > p {
+    font-size: 0.8;
 }
 
 .tours > .content > .card > .price {
@@ -463,7 +514,7 @@
 .tours > .content > .card > .cta-button {
     width: 100%;
     margin-top: auto;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 1.1rem;
 }
 
