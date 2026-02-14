@@ -121,7 +121,7 @@
   const validEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
 
   // Submit
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (honeypot.value) return; // bot
 
@@ -184,25 +184,49 @@
     submitBtn.disabled = true;
     submitBtn.classList.add("opacity-80", "cursor-not-allowed");
 
-    setTimeout(() => {
-      spinner.classList.add("hidden");
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("opacity-80", "cursor-not-allowed");
+    // captcha front end validation
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
 
-      alertBox.classList.remove("hidden");
+    if (!hCaptcha) {
+        window.alert("Please fill out captcha field");
+        return;
+    }
 
-      // Reset form (except newsletter)
-      form.reset();
-      setPhoneRequirement();
-      adults.value = 2;
-      children.value = 0;
+    const formData = new FormData(form);
 
-      // Reset date mins again after reset (some browsers clear)
-      depart.min = iso(addDays(new Date(), 1));
-      ret.min = iso(addDays(new Date(), 2));
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    });
 
-      // Hide alert after a while
-      setTimeout(() => alertBox.classList.add("hidden"), 6000);
-    }, 1200);
+    const result = await response.json();
+
+    if (result.success) {
+        // Success
+        setTimeout(() => {
+          spinner.classList.add("hidden");
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-80", "cursor-not-allowed");
+
+          alertBox.classList.remove("hidden");
+
+          // Reset form (except newsletter)
+          form.reset();
+          setPhoneRequirement();
+          adults.value = 2;
+          children.value = 0;
+
+          // Reset date mins again after reset (some browsers clear)
+          depart.min = iso(addDays(new Date(), 1));
+          ret.min = iso(addDays(new Date(), 2));
+
+          // Hide alert after a while
+          setTimeout(() => alertBox.classList.add("hidden"), 6000);
+        }, 1200);
+        form.reset();
+        // optionalMenuContainer.innerHTML = "";
+    } else {
+        alert("Something went wrong. Please try again.");
+    }
   });
 })();
