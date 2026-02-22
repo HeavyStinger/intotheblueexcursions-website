@@ -8,8 +8,8 @@
   const fullName = document.getElementById("fullName");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
-  const depart = document.getElementById("depart");
-  const ret = document.getElementById("return");
+  const arrival = document.getElementById("arrival");
+  const ret = document.getElementById("depart");
   const message = document.getElementById("message");
   const consent = document.getElementById("consent");
   const honeypot = document.getElementById("website");
@@ -19,8 +19,8 @@
     fullName: document.getElementById("error-fullName"),
     email: document.getElementById("error-email"),
     phone: document.getElementById("error-phone"),
-    depart: document.getElementById("error-depart"),
-    return: document.getElementById("error-return"),
+    arrival: document.getElementById("error-arrival"),
+    return: document.getElementById("error-depart"),
     contactPref: document.getElementById("error-contactPref"),
     message: document.getElementById("error-message"),
     consent: document.getElementById("error-consent"),
@@ -34,12 +34,12 @@
     c.setDate(c.getDate() + days);
     return c;
   };
-  depart.min = iso(addDays(today, 1));
+  arrival.min = iso(addDays(today, 1));
   ret.min = iso(addDays(today, 2));
 
-  depart.addEventListener("change", () => {
-    if (depart.value) {
-      const d = new Date(depart.value);
+  arrival.addEventListener("change", () => {
+    if (arrival.value) {
+      const d = new Date(arrival.value);
       const minReturn = addDays(d, 1);
       ret.min = iso(minReturn);
       if (ret.value && new Date(ret.value) <= d) {
@@ -112,7 +112,7 @@
       input.removeAttribute("aria-describedby");
     }
   }
-  [fullName, email, phone, depart, ret, message, consent].forEach((i) => {
+  [fullName, email, phone, arrival, ret, message, consent].forEach((i) => {
     i.addEventListener("input", () => clearError(i));
     i.addEventListener("change", () => clearError(i));
   });
@@ -142,8 +142,8 @@
       );
       valid = false;
     }
-    if (!depart.value) {
-      showError(depart, "Please select your departure date.");
+    if (!arrival.value) {
+      showError(arrival, "Please select your arrivalure date.");
       valid = false;
     }
     if (!ret.value) {
@@ -151,11 +151,11 @@
       valid = false;
     }
     if (
-      depart.value &&
+      arrival.value &&
       ret.value &&
-      new Date(ret.value) <= new Date(depart.value)
+      new Date(ret.value) <= new Date(arrival.value)
     ) {
-      showError(ret, "Return date must be after departure date.");
+      showError(ret, "Return date must be after arrivalure date.");
       valid = false;
     }
     if (!message.value.trim()) {
@@ -217,7 +217,7 @@
           children.value = 0;
 
           // Reset date mins again after reset (some browsers clear)
-          depart.min = iso(addDays(new Date(), 1));
+          arrival.min = iso(addDays(new Date(), 1));
           ret.min = iso(addDays(new Date(), 2));
 
           // Hide alert after a while

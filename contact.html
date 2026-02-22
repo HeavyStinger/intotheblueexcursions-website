@@ -53,7 +53,7 @@
                 d="M9 12.75 7.5 11.25l-4 4.5L7.5 21l13-15-1.5-1.5L7.5 18z"
               />
             </svg>
-            Average reply time under 2 hours
+            Average reply time under an hour!
           </p>
           <h1
             id="contact-title"
@@ -61,9 +61,6 @@
           >
             Contact our travel specialists
           </h1>
-          <p class="mt-3 text-slate-600">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia officiis cumque expedita amet voluptatem aperiam tempore autem iure incidunt nihil quae voluptates.
-          </p>
         </div>
 
         <div class="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-12">
@@ -207,9 +204,13 @@
                     </svg>
                     Call now
                   </a>
+
+                  <!-- Socials -->
                   <div class="ml-2 flex items-center gap-2 text-slate-500">
+                    <!-- Instagram -->
                     <a
-                      href="#"
+                      href="https://www.instagram.com/intotheblueexcursion?igsh=anhwZmR3dHVidDQ4"
+                      target="_blank"
                       class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-50"
                       aria-label="Instagram"
                     >
@@ -224,8 +225,10 @@
                         />
                       </svg>
                     </a>
+
+                    <!-- Facebook -->
                     <a
-                      href="https://www.facebook.com/profile.php?id=61580125090176"
+                      href="https://www.facebook.com/share/18c4e82Jnu/"
                       target="_blank"
                       class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-50"
                       aria-label="Facebook"
@@ -241,20 +244,21 @@
                         />
                       </svg>
                     </a>
+
+                    <!-- Tiktok -->
                     <a
-                      href="#"
+                      href="https://www.tiktok.com/@intotheblueexcursions?_r=1&_t=ZS-948uAowsNQw"
+                      target="_blank"
                       class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-50"
-                      aria-label="Tripadvisor"
+                      aria-label="Tiktok"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5"
-                        viewBox="0 0 24 24"
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
                         fill="currentColor"
+                        viewBox="0 0 16 16"
                       >
-                        <path
-                          d="M12 6c-2.5 0-4.8.8-6.7 2.2L2 7.5l2.2 2.6A8.99 8.99 0 0 0 12 21a8.99 8.99 0 0 0 7.8-10.9L22 7.5l-3.3.7A10.87 10.87 0 0 0 12 6Zm-4 5.5A3.5 3.5 0 1 1 4.5 15 3.5 3.5 0 0 1 8 11.5Zm8 0A3.5 3.5 0 1 1 19.5 15 3.5 3.5 0 0 1 16 11.5ZM8 13a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm8 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2Z"
-                        />
+                        <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
                       </svg>
                     </a>
                   </div>
@@ -418,9 +422,27 @@
 
                 <div>
                   <label
+                    for="arrival"
+                    class="mb-1 block text-sm font-medium text-slate-700"
+                    >Arrival *</label
+                  >
+                  <input
+                    id="arrival"
+                    name="arrival"
+                    type="date"
+                    required
+                    class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm"
+                  />
+                  <p
+                    class="mt-1 hidden text-sm text-rose-600"
+                    id="error-arrival"
+                  ></p>
+                </div>
+                <div>
+                  <label
                     for="depart"
                     class="mb-1 block text-sm font-medium text-slate-700"
-                    >Departure date *</label
+                    >Departure *</label
                   >
                   <input
                     id="depart"
@@ -432,24 +454,6 @@
                   <p
                     class="mt-1 hidden text-sm text-rose-600"
                     id="error-depart"
-                  ></p>
-                </div>
-                <div>
-                  <label
-                    for="return"
-                    class="mb-1 block text-sm font-medium text-slate-700"
-                    >Return date *</label
-                  >
-                  <input
-                    id="return"
-                    name="return"
-                    type="date"
-                    required
-                    class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm"
-                  />
-                  <p
-                    class="mt-1 hidden text-sm text-rose-600"
-                    id="error-return"
                   ></p>
                 </div>
 
