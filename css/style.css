@@ -330,7 +330,7 @@
 
 .testimonials > .rating {
     width: 100%;
-    margin-top: var(--section-y-spacing);
+    margin: var(--section-y-spacing) 0;
     padding: 0 var(--page-x-deadzone);
     display: flex;
     flex-direction: column;
@@ -622,4 +622,21 @@
     /* text-decoration: none; */
     font-style: normal;
     color: var(--text-color);
+}
+
+.cancellation-policy {
+    width: 100%;
+    margin-top: var(--page-y-spacing);
+}
+
+.cancellation-policy > .content {
+    width: 100%;
+    margin-top: var(--section-y-spacing);
+    padding: 0 var(--page-x-deadzone);
+}
+
+.cancellation-policy > .content > p {
+    line-height: 1.4;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
 }
