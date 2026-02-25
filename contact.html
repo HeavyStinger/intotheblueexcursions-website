@@ -108,8 +108,16 @@
                         href="tel:+5016334902"
                         >+501 6334902</a
                       >
+
+                      or
+                      
+                      <a
+                        class="text-teal-700 hover:text-teal-800"
+                        href="tel:+5016250545"
+                        >+501 625 0545</a
+                      >
                       <p class="text-xs text-slate-500">
-                        WhatsApp available on the same number
+                        WhatsApp available on the first number
                       </p>
                     </div>
                   </li>
@@ -377,7 +385,7 @@
                   <label
                     for="phone"
                     class="mb-1 block text-sm font-medium text-slate-700"
-                    >Phone</label
+                    >Phone *</label
                   >
                   <input
                     id="phone"
@@ -387,73 +395,71 @@
                     autocomplete="tel"
                     class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm"
                     placeholder="+1 555 555 5555"
+                    required
                   />
                   <p
                     class="mt-1 hidden text-sm text-rose-600"
                     id="error-phone"
                   ></p>
                 </div>
-                <div>
-                  <label
-                    for="destination"
-                    class="mb-1 block text-sm font-medium text-slate-700"
-                    >Destination</label
-                  >
-                  <input
-                    id="destination"
-                    name="destination"
-                    list="destinations"
-                    class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm"
-                    placeholder="e.g., Bali, Iceland, Safari Kenya"
-                  />
-                  <datalist id="destinations">
-                    <option value="Bali, Indonesia"></option>
-                    <option value="Santorini, Greece"></option>
-                    <option value="Patagonia, Argentina"></option>
-                    <option value="Kyoto, Japan"></option>
-                    <option value="Amalfi Coast, Italy"></option>
-                    <option value="Safari, Kenya"></option>
-                    <option value="Maldives"></option>
-                    <option value="Peru — Machu Picchu"></option>
-                    <option value="Iceland"></option>
-                    <option value="Swiss Alps"></option>
-                  </datalist>
-                </div>
 
                 <div>
                   <label
-                    for="arrival"
+                    for="date"
                     class="mb-1 block text-sm font-medium text-slate-700"
-                    >Arrival *</label
+                    >Date *</label
                   >
                   <input
-                    id="arrival"
-                    name="arrival"
+                    id="date"
+                    name="date"
                     type="date"
                     required
                     class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm"
                   />
                   <p
                     class="mt-1 hidden text-sm text-rose-600"
-                    id="error-arrival"
+                    id="error-date"
                   ></p>
                 </div>
                 <div>
                   <label
                     for="depart"
                     class="mb-1 block text-sm font-medium text-slate-700"
-                    >Departure *</label
+                    >Tour Type *</label
                   >
-                  <input
-                    id="depart"
-                    name="depart"
+                  <select
+                    id="tourType"
+                    name="tourType"
                     type="date"
                     required
                     class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm"
-                  />
+                  >
+                    <option value="Scenic Flights">Scenic Flights</option>
+                    <option value="Snorkeling / Scuba Diving">Snorkeling / Scuba Diving</option>
+                    <option value="Catamaran Tours">Catamaran Tours</option>
+                  </select>
                   <p
                     class="mt-1 hidden text-sm text-rose-600"
-                    id="error-depart"
+                    id="error-tourType"
+                  ></p>
+                </div>
+
+                <div>
+                  <label
+                    for="destination"
+                    class="mb-1 block text-sm font-medium text-slate-700"
+                    >Select Tour</label
+                  >
+                  <select
+                    id="tour"
+                    name="tour"
+                    class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 placeholder-slate-400 shadow-sm"
+                    placeholder="e.g., Bali, Iceland, Safari Kenya"
+                  >
+                  </select>
+                  <p
+                    class="mt-1 hidden text-sm text-rose-600"
+                    id="error-tour"
                   ></p>
                 </div>
 
@@ -528,25 +534,6 @@
                   </div>
                 </div>
 
-                <div>
-                  <label
-                    for="budget"
-                    class="mb-1 block text-sm font-medium text-slate-700"
-                    >Budget (per person)</label
-                  >
-                  <select
-                    id="budget"
-                    name="budget"
-                    class="focus-ring block w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm"
-                  >
-                    <option value="">Select a range</option>
-                    <option>Under $1,500</option>
-                    <option>$1,500 – $3,000</option>
-                    <option>$3,000 – $5,000</option>
-                    <option>$5,000 – $8,000</option>
-                    <option>$8,000+</option>
-                  </select>
-                </div>
                 <div>
                   <span class="mb-1 block text-sm font-medium text-slate-700"
                     >Preferred contact *</span

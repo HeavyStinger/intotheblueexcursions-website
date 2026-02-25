@@ -87,7 +87,7 @@
 
 .hero .video {
     height: 250px;
-    width: 444.4444px;
+    width: 140.645px;
     margin-top: 50px;
     display: none;
     border-radius: 10px;
@@ -326,6 +326,17 @@
 
 .testimonials > .content > .card:hover .name::before {
     opacity: 1;
+}
+
+.testimonials > .rating {
+    width: 100%;
+    margin-top: var(--section-y-spacing);
+    padding: 0 var(--page-x-deadzone);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
 }
 
 /* Services */

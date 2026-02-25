@@ -8,8 +8,9 @@
   const fullName = document.getElementById("fullName");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
-  const arrival = document.getElementById("arrival");
-  const ret = document.getElementById("depart");
+  const date = document.getElementById("date");
+  const tourType = document.getElementById("tourType");
+  const tourSelect = document.getElementById("tour");
   const message = document.getElementById("message");
   const consent = document.getElementById("consent");
   const honeypot = document.getElementById("website");
@@ -19,8 +20,8 @@
     fullName: document.getElementById("error-fullName"),
     email: document.getElementById("error-email"),
     phone: document.getElementById("error-phone"),
-    arrival: document.getElementById("error-arrival"),
-    return: document.getElementById("error-depart"),
+    date: document.getElementById("error-date"),
+    tourType: document.getElementById("error-tourType"),
     contactPref: document.getElementById("error-contactPref"),
     message: document.getElementById("error-message"),
     consent: document.getElementById("error-consent"),
@@ -34,17 +35,11 @@
     c.setDate(c.getDate() + days);
     return c;
   };
-  arrival.min = iso(addDays(today, 1));
-  ret.min = iso(addDays(today, 2));
+  date.min = iso(addDays(today, 1));
 
-  arrival.addEventListener("change", () => {
-    if (arrival.value) {
-      const d = new Date(arrival.value);
-      const minReturn = addDays(d, 1);
-      ret.min = iso(minReturn);
-      if (ret.value && new Date(ret.value) <= d) {
-        ret.value = iso(minReturn);
-      }
+  date.addEventListener("change", () => {
+    if (date.value) {
+      const d = new Date(date.value);
     }
   });
 
@@ -112,13 +107,74 @@
       input.removeAttribute("aria-describedby");
     }
   }
-  [fullName, email, phone, arrival, ret, message, consent].forEach((i) => {
+  [fullName, email, phone, date, tourType, message, consent].forEach((i) => {
     i.addEventListener("input", () => clearError(i));
     i.addEventListener("change", () => clearError(i));
   });
 
   // Email simple check
   const validEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+
+  // Validate Tour Type
+  const availableTours = ["Scenic Flights", "Snorkeling / Scuba Diving", "Catamaran Tours"];
+
+  // ! Handle tour based on tour type
+  const scenicFlightTours = ["Scenic Airplane flight", "Scenic Helicopter flight"];
+  const scubaorSnorkelTours = ["Full Day Snorkeling Tour", "Full Day Scuba Diving"];
+  const catamaranTours = ["Catamaran Cruises"];
+
+  const handleTourDropdown = () => {
+    // Handle tour options based on tour type selection
+    const selectedTour = tourType.value;
+
+    let options = [];
+    if (selectedTour === "Scenic Flights") {
+      options = scenicFlightTours;
+    }
+    else if (selectedTour === "Snorkeling / Scuba Diving") {
+      options = scubaorSnorkelTours;
+    }
+    else if (selectedTour === "Catamaran Tours") {
+      options = catamaranTours;
+    }
+    tourSelect.innerHTML = options.map(o => `<option value="${o}">${o}</option>`).join("");
+  };
+
+  // Tour type and tour handler
+  document.addEventListener("DOMContentLoaded", () => {
+    // If Url Params exist, preselect tour type and tour
+    const urlParams = new URLSearchParams(document.location.search);
+    const serviceType = urlParams.get("servicetype");
+    const service = urlParams.get("service");
+
+    if (serviceType) {
+      if (availableTours.includes(serviceType)) {
+        tourType.value = serviceType;
+      }
+    }
+
+    if (service) {
+      let currentTours;
+      // Determine what tour is selected
+      if (tourType.value == availableTours[0]) {
+        currentTours = scenicFlightTours;
+      }
+      else if (tourType.value == availableTours[1]) {
+        currentTours = scubaorSnorkelTours;
+      }
+      else if (tourType.value == availableTours[2]) {
+        currentTours = catamaranTours;
+      }
+
+	  handleTourDropdown();
+
+      if (currentTours.includes(service)) {
+        tourSelect.value = service;
+      }
+    }
+  });
+
+  tourType.addEventListener("change", handleTourDropdown);
 
   // Submit
   form.addEventListener("submit", async (e) => {
@@ -128,35 +184,37 @@
     let valid = true;
     // Required checks
     if (!fullName.value.trim()) {
-      showError(fullName, "Please enter your full name.");
-      valid = false;
+		showError(fullName, "Please enter your full name.");
+		valid = false;
     }
     if (!email.value.trim() || !validEmail(email.value.trim())) {
-      showError(email, "Enter a valid email address.");
-      valid = false;
+		showError(email, "Enter a valid email address.");
+		valid = false;
     }
-    if (phone.required && !phone.value.trim()) {
-      showError(
-        phone,
-        "Phone number is required for your selected contact method.",
-      );
-      valid = false;
+    if (!phone.value.trim() || phone.value === "") {
+		console.log("Phone is required");
+		showError(
+			phone,
+			"Phone number is required for your selected contact method."
+		);
+		valid = false;
     }
-    if (!arrival.value) {
-      showError(arrival, "Please select your arrivalure date.");
-      valid = false;
-    }
-    if (!ret.value) {
-      showError(ret, "Please select your return date.");
-      valid = false;
-    }
-    if (
-      arrival.value &&
-      ret.value &&
-      new Date(ret.value) <= new Date(arrival.value)
-    ) {
-      showError(ret, "Return date must be after arrivalure date.");
-      valid = false;
+
+    // Validate Date
+	const selectedDate = new Date(date.value);
+	const tomorrow = new Date();
+	tomorrow.setDate(tomorrow.getDate());
+
+	if (!date.value || selectedDate < tomorrow) {
+		showError(date, "Please select a valid date.");
+    	valid = false;
+	}
+
+    // Tour Type
+    const validTourType = (val) => availableTours.includes(val);
+    if (!validTourType(tourType.value)) {
+      showError(tourType, "Please select a valid tour type.");
+      return;
     }
     if (!message.value.trim()) {
       showError(message, "Please tell us a bit about your trip.");
@@ -189,6 +247,9 @@
 
     if (!hCaptcha) {
         window.alert("Please fill out captcha field");
+		spinner.classList.add("hidden");
+		submitBtn.disabled = false;
+		submitBtn.classList.remove("opacity-80", "cursor-not-allowed");
         return;
     }
 
@@ -217,7 +278,7 @@
           children.value = 0;
 
           // Reset date mins again after reset (some browsers clear)
-          arrival.min = iso(addDays(new Date(), 1));
+          date.min = iso(addDays(new Date(), 1));
           ret.min = iso(addDays(new Date(), 2));
 
           // Hide alert after a while
@@ -226,7 +287,10 @@
         form.reset();
         // optionalMenuContainer.innerHTML = "";
     } else {
-        alert("Something went wrong. Please try again.");
+		alert("Something went wrong. Please try again.");
+		spinner.classList.add("hidden");
+		submitBtn.disabled = false;
+		submitBtn.classList.remove("opacity-80", "cursor-not-allowed");
     }
   });
 })();
