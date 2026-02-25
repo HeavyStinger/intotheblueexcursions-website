@@ -153,21 +153,21 @@
       }
     }
 
+    let currentTours;
+    // Determine what tour is selected
+    if (tourType.value == availableTours[0]) {
+      currentTours = scenicFlightTours;
+    }
+    else if (tourType.value == availableTours[1]) {
+      currentTours = scubaorSnorkelTours;
+    }
+    else if (tourType.value == availableTours[2]) {
+      currentTours = catamaranTours;
+    }
+
+    handleTourDropdown();
+
     if (service) {
-      let currentTours;
-      // Determine what tour is selected
-      if (tourType.value == availableTours[0]) {
-        currentTours = scenicFlightTours;
-      }
-      else if (tourType.value == availableTours[1]) {
-        currentTours = scubaorSnorkelTours;
-      }
-      else if (tourType.value == availableTours[2]) {
-        currentTours = catamaranTours;
-      }
-
-	  handleTourDropdown();
-
       if (currentTours.includes(service)) {
         tourSelect.value = service;
       }
@@ -184,20 +184,20 @@
     let valid = true;
     // Required checks
     if (!fullName.value.trim()) {
-		showError(fullName, "Please enter your full name.");
-		valid = false;
+      showError(fullName, "Please enter your full name.");
+      valid = false;
     }
     if (!email.value.trim() || !validEmail(email.value.trim())) {
-		showError(email, "Enter a valid email address.");
-		valid = false;
+      showError(email, "Enter a valid email address.");
+      valid = false;
     }
     if (!phone.value.trim() || phone.value === "") {
-		console.log("Phone is required");
-		showError(
-			phone,
-			"Phone number is required for your selected contact method."
-		);
-		valid = false;
+      console.log("Phone is required");
+      showError(
+        phone,
+        "Phone number is required for your selected contact method."
+      );
+      valid = false;
     }
 
     // Validate Date
