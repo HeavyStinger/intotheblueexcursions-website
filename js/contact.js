@@ -12,7 +12,6 @@
   const tourType = document.getElementById("tourType");
   const tourSelect = document.getElementById("tour");
   const message = document.getElementById("message");
-  const consent = document.getElementById("consent");
   const honeypot = document.getElementById("website");
 
   // Errors
@@ -24,7 +23,6 @@
     tourType: document.getElementById("error-tourType"),
     contactPref: document.getElementById("error-contactPref"),
     message: document.getElementById("error-message"),
-    consent: document.getElementById("error-consent"),
   };
 
   // Date constraints
@@ -107,7 +105,7 @@
       input.removeAttribute("aria-describedby");
     }
   }
-  [fullName, email, phone, date, tourType, message, consent].forEach((i) => {
+  [fullName, email, phone, date, tourType, message].forEach((i) => {
     i.addEventListener("input", () => clearError(i));
     i.addEventListener("change", () => clearError(i));
   });
@@ -220,10 +218,6 @@
       showError(message, "Please tell us a bit about your trip.");
       valid = false;
     }
-    if (!consent.checked) {
-      showError(consent, "You must agree before submitting.");
-      valid = false;
-    }
 
     // Contact preference error (unlikely needed, but handled)
     const pref = contactRadios.find((r) => r.checked);
@@ -279,7 +273,6 @@
 
           // Reset date mins again after reset (some browsers clear)
           date.min = iso(addDays(new Date(), 1));
-          ret.min = iso(addDays(new Date(), 2));
 
           // Hide alert after a while
           setTimeout(() => alertBox.classList.add("hidden"), 6000);
