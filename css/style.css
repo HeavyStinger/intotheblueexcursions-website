@@ -651,3 +651,7 @@
     gap: 4px;
     list-style-position: inside;
 }
+
+.cancellation-policy > .content > ul > li {
+    color: var(--secondary-text-color);
+}
