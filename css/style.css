@@ -80,6 +80,7 @@
 
 .hero > .content > .trust {
     margin-top: -10px;
+    margin-left: 4px;
     text-align: left;
     color: var(--text-white-secondary);
     font-size: 0.8rem;
