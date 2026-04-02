@@ -1,6 +1,6 @@
 html, body {
     overflow-x: hidden;
-    overscroll-behavior: none;
+    /* overscroll-behavior: none; */
     scroll-behavior: smooth;
 }
 
@@ -55,14 +55,7 @@ nav > .cta-button {
 .nav-links-mobile {
     max-height: 0;
     width: calc(100% - (2 * var(--page-x-deadzone)));
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0.05) 0%,
-            rgba(0, 0, 0, 0.08) 40%,
-            rgba(0, 0, 0, 0.15) 70%,
-            rgba(0, 0, 0, 0.25) 100%
-        );
+    background-color: rgba(0, 0, 0, 0.7777777);
     backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;

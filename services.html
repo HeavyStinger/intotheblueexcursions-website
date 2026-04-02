@@ -81,11 +81,22 @@
                 }
             }
         </script>
+
+        <!-- Structured Data: Developer/Creator -->
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Corbin Pacheco",
+            "sameAs": ["https://wa.me/5016063532"],
+            "jobTitle": "Full Stack Web Developer"
+            }
+        </script>
     </head>
     <body>
         <nav class="not-home">
             <div class="logo">
-                <img src="./media/images/logo.png" alt="Logo for Into the Blue Excursions" class="logo">
+                <img loading="lazy" src="./media/images/logo.png" alt="Logo for Into the Blue Excursions" class="logo">
                 Into The Blue Excursions
             </div>
             <div class="links active">
@@ -114,13 +125,13 @@
                 Belize Tours, Great Blue Hole Scenic Flights, Snorkeling & Scuba Diving
             </h1>
             <!-- Scenic Flights -->
-            <section id="scenic-flights" class="tours">
+            <section id="scenic-flights" class="tours scenic-flight">
                 <h2 class="section-title">Scenic Flights</h2>
                 <div class="content">
                     <!-- Scenic Airplane flight -->
                     <div class="card">
                         <div class="top">
-                            <img src="./media/images/services/scenic-airplane-flight.webp" alt="Scenic Airplane Flight">
+                            <img loading="lazy" src="./media/images/services/scenic-airplane-flight.webp" alt="Scenic Airplane Flight">
                             <div class="info">
                                 <h3 class="title">Scenic Airplane Flight</h3>
                             </div>
@@ -147,19 +158,19 @@
                         </div>
                         <div class="photos">
                             <div class="wrapper">
-                                <img src="./media/images/services/coastal-takeoff.webp" alt="Picture of Coastal Takeoff">
+                                <img loading="lazy" src="./media/images/services/coastal-takeoff.webp" alt="Picture of Coastal Takeoff">
                                 <p class="location">Coastal takeoff</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/hero.jpeg" alt="Picture of Blue Hole">
+                                <img loading="lazy" src="./media/images/hero.jpeg" alt="Picture of Blue Hole">
                                 <p class="location">Great Blue Hole</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/shipwreck.webp" alt="Picture of Shipwreck">
+                                <img loading="lazy" src="./media/images/services/shipwreck.webp" alt="Picture of Shipwreck">
                                 <p class="location">Shipwreck</p>
                             </div>
                         </div>
-                        <span class="price"><strong>$250</strong> USD / person</span>
+                        <span class="price"><strong>$275</strong> USD / person</span>
                         <div class="important-info">
                             <div class="detail">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M600-160q-134 0-227-93t-93-227q0-133 93-226.5T600-800q133 0 226.5 93.5T920-480q0 134-93.5 227T600-160Zm0-80q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70Zm91-91 57-57-108-108v-144h-80v177l131 132ZM80-600v-80h160v80H80ZM40-440v-80h200v80H40Zm40 160v-80h160v80H80Zm520-200Z"></path></svg>
@@ -186,7 +197,7 @@
                     <!-- Scenic Helicopter flight -->
                      <div class="card">
                         <div class="top">
-                            <img src="./media/images/services/scenic-helicopter-flight.webp" alt="Scenic Helicopter Flight">
+                            <img loading="lazy" src="./media/images/services/scenic-helicopter-flight.webp" alt="Scenic Helicopter Flight">
                             <div class="info">
                                 <h3 class="title">Scenic Helicopter Flight</h3>
                             </div>
@@ -213,15 +224,15 @@
                         </div>
                         <div class="photos">
                             <div class="wrapper">
-                                <img src="./media/images/services/coastal-takeoff-helicopter.webp" alt="Picture of Coastal Takeoff with Helicopter">
+                                <img loading="lazy" src="./media/images/services/coastal-takeoff-helicopter.webp" alt="Picture of Coastal Takeoff with Helicopter">
                                 <p class="location">Coastal takeoff</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/blue-hole-helicopter.webp" alt="Picture of Blue Hole with Helicopter">
+                                <img loading="lazy" src="./media/images/services/blue-hole-helicopter.webp" alt="Picture of Blue Hole with Helicopter">
                                 <p class="location">Great Blue Hole</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/shipwreck.webp" alt="Picture of Shipwreck">
+                                <img loading="lazy" src="./media/images/services/shipwreck.webp" alt="Picture of Shipwreck">
                                 <p class="location">Shipwreck</p>
                             </div>
                         </div>
@@ -279,12 +290,12 @@
                 </div>
             </section>
             <!-- Diving -->
-            <section id="diving" class="tours">
+            <section id="diving" class="tours diving">
                 <h2 class="section-title">Snorkeling / Scuba Diving</h2>
                 <div class="content">
                     <div class="card">
                         <div class="top">
-                            <img src="./media/images/services/full-day-snorkeling-tour.webp" alt="Full day snorkeling tour">
+                            <img loading="lazy" src="./media/images/services/full-day-snorkeling-tour.webp" alt="Full day snorkeling tour">
                             <div class="info">
                                 <h3 class="title">Full Day Snorkeling Tour</h3>
                             </div>
@@ -300,7 +311,7 @@
                             </span>
                         </div> -->
                         <p class="description">
-                            Explore Belize's most vibrant marine ecosystems on an mezmerizing full day
+                            Explore Belize's most vibrant marine ecosystems on an mesmerizing full day
                             Snorkeling experience. Cruise crystal clear waters, swim among thriving coral reefs,
                             and encounter some of the Caribbean's most iconic sea life all at a laid back pace.
                         </p>
@@ -321,15 +332,15 @@
                         </div>
                         <div class="photos">
                             <div class="wrapper">
-                                <img src="./media/images/services/north-channel.webp" alt="Picture of the North Channel">
+                                <img loading="lazy" src="./media/images/services/north-channel.webp" alt="Picture of the North Channel">
                                 <p class="location">North Channel</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/shark-and-ray-alley.webp" alt="Picture of the Shark and Ray Alley">
+                                <img loading="lazy" src="./media/images/services/shark-and-ray-alley.webp" alt="Picture of the Shark and Ray Alley">
                                 <p class="location">Shark & Ray Alley</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/tarpon-cove.webp" alt="Picture of the Tarpon Cove">
+                                <img loading="lazy" src="./media/images/services/tarpon-cove.webp" alt="Picture of the Tarpon Cove">
                                 <p class="location">Tarpon Cove</p>
                             </div>
                         </div>
@@ -359,7 +370,7 @@
                     </div>
                     <div class="card">
                         <div class="top">
-                            <img src="./media/images/services/full-day-scuba-diving.webp" alt="Full Day Scuba Diving">
+                            <img loading="lazy" src="./media/images/services/full-day-scuba-diving.webp" alt="Full Day Scuba Diving">
                             <div class="info">
                                 <h3 class="title">Full Day Scuba Diving</h3>
                             </div>
@@ -388,13 +399,13 @@
                         </div>
                         <div class="photos">
                             <div class="wrapper">
-                                <img src="./media/images/services/esmeralda.webp" alt="Picture of the Esmeralda">
+                                <img loading="lazy" src="./media/images/services/esmeralda.webp" alt="Picture of the Esmeralda">
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/lobster.webp" alt="Picture of a Lobster">
+                                <img loading="lazy" src="./media/images/services/lobster.webp" alt="Picture of a Lobster">
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/turtle.webp" alt="Picture of a Turtle">
+                                <img loading="lazy" src="./media/images/services/turtle.webp" alt="Picture of a Turtle">
                             </div>
                         </div>
                         <span class="price"><strong>$160</strong> USD / person</span>
@@ -426,12 +437,12 @@
                 </div>
             </section> -->
             <!-- Catamaran Tours -->
-            <section id="catamaran-tours" class="tours">
+            <section id="catamaran-tours" class="tours catamaran">
                 <h2 class="section-title">Catamaran Tours</h2>
                 <div class="content">
                     <div class="card">
                         <div class="top">
-                            <img src="./media/images/services/catamaran-cruise.webp" alt="Catamaran Cruise">
+                            <img loading="lazy" src="./media/images/services/catamaran-cruise.webp" alt="Catamaran Cruise">
                             <div class="info">
                                 <h3 class="title">Catamaran Cruises</h3>
                             </div>
@@ -459,15 +470,15 @@
                         </div>
                         <div class="photos">
                             <div class="wrapper">
-                                <img src="./media/images/services/hol-chan.webp" alt="Picture of Hol Chan Marine Reserve">
+                                <img loading="lazy" src="./media/images/services/hol-chan.webp" alt="Picture of Hol Chan Marine Reserve">
                                 <p class="location">Hol Chan</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/shark-and-ray-alley.webp" alt="Picture of Shark and Ray Alley">
+                                <img loading="lazy" src="./media/images/services/shark-and-ray-alley.webp" alt="Picture of Shark and Ray Alley">
                                 <p class="location">Shark & Ray Alley</p>
                             </div>
                             <div class="wrapper">
-                                <img src="./media/images/services/coral-gardens.webp" alt="Picture of Coral Gardens">
+                                <img loading="lazy" src="./media/images/services/coral-gardens.webp" alt="Picture of Coral Gardens">
                                 <p class="location">Coral Gardens</p>
                             </div>
                         </div>
@@ -514,7 +525,7 @@
             <div class="footer-content">
                 <div class="footer-company">
                     <div class="logo">
-                        <img src="./media/images/logo.png"/> Into The Blue Excursions
+                        <img loading="lazy" src="./media/images/logo.png"/> Into The Blue Excursions
                     </div>
                     <div class="description">
                         Into The Blue Excursions curates unforgettable air and sea experiences across Belize, connecting travelers to the country’s most breathtaking adventures.
@@ -573,7 +584,7 @@
         class="whatsapp-float"
         target="_blank">
 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
                 alt="WhatsApp Chat"
                 class="whatsapp-icon" />
         </a>
