@@ -65,7 +65,7 @@ nav > .cta-button {
     transform: translate(-50%, -100px);
     border-radius: 8px;
     overflow: hidden;
-    z-index: 2;
+    z-index: 5;
     pointer-events: none;
     opacity: 0;
     transition: max-height 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
